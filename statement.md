@@ -150,5 +150,7 @@ boom.sayMyName()
 
 Module Pattern! *sayMyAge* and *sayMyName* are both executed outside of their lexical scope. But because both have references to the *myModule* inner scope, the scope is kept alive for them to use the name and age variable. 
 
-Closures ftw!
+## Conclusion
+
+I am sure you have used closures in the past without you knowing it. Look at the code you wrote in the past and try to spot the closures you wrote. In the next playgrounds, we will dig deeper in functional programming and the use of closures.
 
