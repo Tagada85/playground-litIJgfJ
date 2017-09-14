@@ -157,10 +157,6 @@ Closures ftw!
 A few questions to challenge your understanding of closures.
 
 ?[What would be printed out the the console?]
-<!--```javascript
-let name = 'John'
-console.log(name)
-```-->
 -[x] John
 -[ ] ReferenceError
 
