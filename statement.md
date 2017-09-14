@@ -161,7 +161,7 @@ A few questions to challenge your understanding of closures.
 let name = 'John'
 console.log(name)
 ```
-
+]
 -[x] John
 -[ ] ReferenceError
-]
+
