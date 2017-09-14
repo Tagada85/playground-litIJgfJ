@@ -121,7 +121,7 @@ chrono('GOGOGO')
 
 *timer* has an reference to the *chrono* inner scope( with the *message* variable ). That scope is kept alive even after 1 second where the *chrono* is clearly no longer needed by *timer*. Because that scope is still alive, *timer* can print 'GOGOGO' (the *message* variable) every second.
 
-One last example. Let's look at the infamous module pattern.
+One last example. Let's look at the famous module pattern.
 
 ```javascript runnable
 function myModule(){
