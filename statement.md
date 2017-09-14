@@ -151,3 +151,17 @@ boom.sayMyName()
 Module Pattern! *sayMyAge* and *sayMyName* are both executed outside of their lexical scope. But because both have references to the *myModule* inner scope, the scope is kept alive for them to use the name and age variable. 
 
 Closures ftw!
+
+## Quiz
+
+A few questions to challenge your understanding of closures.
+
+?[What would be printed out the the console?
+```javascript
+let name = 'John'
+console.log(name)
+```
+
+-[x] John
+-[ ] ReferenceError
+]
