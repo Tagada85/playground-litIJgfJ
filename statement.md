@@ -1,6 +1,6 @@
 ## Introduction
 
-I write because it helps me retain informations. Whatever subject I'm studying I force myself to put it into words, like I'm teaching someone else. My main purpose is not to teach others though, but to teach myself. We always think we understand something, until we have to explain it. Those who know, do, those who teach, do it better. I'll try to teach myself closures in this article.
+Closures are a crucial aspect of Javascript. Yet it remains a mysterious subject that some developers do not understand properly. Closures are extremely powerful and useful. I'm absolutely convinced that even if you do not know anything about closures (yet!), you already use them in your code on a regular basis. Let's see what they are all about!
 
 ## Closures
 
@@ -10,22 +10,22 @@ The definition of closure is as follow:
 
 ### Scope
 
-To understand closure, I must first understand scopes. The scope in a program is a set of rules for storing variables in some location and retrieving them later.
-Certain structures in a program create their own scopes ( functions, ifs, for loops ...). If I declare a variable inside a scope, it is not accessible in an other one.
+To understand closures, we must first understand scopes. The scope in a program is a set of rules for storing variables in some location and retrieving them later.
+Certain structures in a program create their own scopes. If I declare a variable inside a scope, it is not accessible in an other one.
 
 ```javascript runnable
 // I am in the global scope
-const a = 'Damien'
+let a = 'Damien'
 
 if( true ) {
   // This is a different scope
-  const a = 'John'
+  let a = 'John'
   console.log(a) //John
 }
 
 const func = () => {
   // This is a third scope
-  const a = 'Joe'
+  let a = 'Joe'
   console.log(a) // Joe
 }
 
@@ -34,9 +34,11 @@ console.log(a) // Damien
  
 ```
 
+We have three different scopes here: the global, the one created by the if block and the one created by the function *func*.
+
 If you try to retrieve a variable that do not exist in the current scope, Javascript will look for it in the outer scope. Javascript will repeat this process until there are no more outer scope to inspect. If the variable is not found, you'll get a ReferenceError:
 
-```javascript
+```javascript runnable
 // I am in the global scope
 
 if( true ) {
