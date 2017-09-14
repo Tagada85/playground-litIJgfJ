@@ -43,13 +43,13 @@ If you try to retrieve a variable that do not exist in the current scope, Javasc
 
 if( true ) {
   // This is a different scope
-  const a = 'John'
+  let a = 'John'
   console.log(a) //John
 }
 
 const func = () => {
   // This is a third scope
-  const a = 'Joe'
+  let a = 'Joe'
   console.log(a) // Joe
 }
 
@@ -57,11 +57,11 @@ console.log(a) // ReferenceError
 func() 
 ```
 
-I removed the variable declaration in the global scope. When I try to retrieve it, Javascript can't find it and returns an error.
+I removed the variable declaration in the global scope. When I try to retrieve it, Javascript can't find it and returns an error. In this case, there are no outer scope to inspect because we are already in the global scope.
 
-```javascript
+```javascript runnable
 // I am in the global scope
-const a = 'Damien'
+let a = 'Damien'
 
 if( true ) {
   // This is a different scope
@@ -70,7 +70,7 @@ if( true ) {
 
 const func = () => {
   // This is a third scope
-  const a = 'Joe'
+  let a = 'Joe'
   console.log(a) // Joe
 }
 
@@ -80,13 +80,13 @@ func()
 
 In this case, I removed the variable declaration in the if block. Javascript can't find the variable a in this scope, so it looks in the outer scope. The program finds a = 'Damien' in this outer scope ( the global scope ) and uses it.
 
-## Back to closure
+## Back to closures
 
-So now, I understand a bit more about scopes. Closures allow a function to access its scope when that function is executing outside of its scope. Let's see this in action.
+So now, we understand a bit more about scopes. Closures allow a function to access its scope when that function is executing outside of its scope. Let's see this in action.
 
-```javascript
+```javascript runnable
 function outer(){
-  const a = 'Damien'
+  let a = 'Damien'
 
   function inner(){
     console.log(a)
@@ -97,6 +97,7 @@ function outer(){
 const func = outer()
 
 func() // 'Damien'
+console.log('Closure happened!!')
 
 ```
 
@@ -106,9 +107,9 @@ Why is this a closure? To be a closure, this would mean that the function *inner
 
 ## More examples?
 
-Ok, it's still a bit blurry. Could you give me more examples? Perhaps real-world ones?
+Ok, it's still a bit blurry. Could you give me more examples? Perhaps real-world ones? What about callbacks?
 
-```javascript
+```javascript runnable
 function chrono( message ){
   setInterval( function timer() {
     console.log( message )
