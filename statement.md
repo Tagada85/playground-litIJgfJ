@@ -152,16 +152,3 @@ Module Pattern! *sayMyAge* and *sayMyName* are both executed outside of their le
 
 Closures ftw!
 
-## Quiz
-
-A few questions to challenge your understanding of closures.
-
-?[What would be printed out the the console?]
--[x] John
--[ ] ReferenceError
-
-```javascript
-let name = 'John'
-console.log(name)
-```
-
