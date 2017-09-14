@@ -160,3 +160,8 @@ A few questions to challenge your understanding of closures.
 -[x] John
 -[ ] ReferenceError
 
+```javascript
+let name = 'John'
+console.log(name)
+```
+
