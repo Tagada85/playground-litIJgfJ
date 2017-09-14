@@ -119,12 +119,14 @@ function chrono( message ){
 chrono('GOGOGO')
 ```
 
-*timer* has an reference to the *chrono* inner scope. That scope is kept alive even after 1 seconds where the *chrono* is clearly no longer needed by *timer*. Because that scope is still alive, *timer* can print 'GOGOGO' every second.
+*timer* has an reference to the *chrono* inner scope( with the *message* variable ). That scope is kept alive even after 1 second where the *chrono* is clearly no longer needed by *timer*. Because that scope is still alive, *timer* can print 'GOGOGO' (the *message* variable) every second.
 
-```javascript
+One last example. Let's look at the infamous module pattern.
+
+```javascript runnable
 function myModule(){
-  const name = 'Damien'
-  const age = 25
+  let name = 'Damien'
+  let age = 25
 
   function sayMyName(){
     console.log(name)
